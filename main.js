@@ -14,22 +14,29 @@ const altText = {
   pic5: 'Butterfly on leaf',
 };
 
+/* Looping through images */
 for (let i = 0; i < images.length; i++) {
   let img = document.createElement('img');
+
   img.setAttribute('src', `images/${images[i]}`);
+
   altIdentifier = `pic${i + 1}`;
   img.setAttribute('alt', altText[altIdentifier]);
+
   thumbBar.appendChild(img);
 }
 
-/* Looping through images */
+/* Wiring up the Darken/Lighten button */
+btn.addEventListener('click', () => {
+  overlay.className === 'overlay'
+    ? (overlay.className = 'overlay-darkened')
+    : (overlay.className = 'overlay');
+});
 
 const newImage = document.createElement('img');
 newImage.setAttribute('src', xxx);
 newImage.setAttribute('alt', xxx);
 thumbBar.appendChild(newImage);
-
-/* Wiring up the Darken/Lighten button */
 
 // Loop through the array of filenames, and for each one, insert an <img>
 // element inside the thumb-bar <div> that embeds that image in the page along with its alternative text.
