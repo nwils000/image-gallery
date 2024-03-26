@@ -1,7 +1,7 @@
 const displayedImage = document.querySelector('.displayed-img');
 const thumbBar = document.querySelector('.thumb-bar');
 const fullImage = document.querySelector('.full-img');
-
+const darkenButton = document.querySelector('.dark');
 const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
@@ -41,13 +41,13 @@ btn.addEventListener('click', () => {
     : (overlay.className = 'overlay');
 });
 
+darkenButton.addEventListener('click', () => {
+  darkenButton.innerHTML === 'Darken'
+    ? (darkenButton.innerHTML = 'Lighten')
+    : (darkenButton.innerHTML = 'Darken');
+});
+
 const newImage = document.createElement('img');
 newImage.setAttribute('src', xxx);
 newImage.setAttribute('alt', xxx);
 thumbBar.appendChild(newImage);
-
-// Add a click event listener to each <img> inside the thumb-bar <div> so that,
-// when they are clicked, the corresponding image and alternative text are displayed in the displayed-img <img> element.
-
-// Add a click event listener to the <button> so that when it is clicked, a
-// darken effect is applied to the full-size image. When it is clicked again, the darken effect is removed again.
