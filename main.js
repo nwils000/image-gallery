@@ -15,8 +15,6 @@ const altText = {
   pic5: 'Butterfly on leaf',
 };
 
-/* Adding images to displayImage on click */
-
 /* Looping through images */
 for (let i = 0; i < images.length; i++) {
   let img = document.createElement('img');
@@ -27,7 +25,10 @@ for (let i = 0; i < images.length; i++) {
   img.setAttribute('alt', altText[altIdentifier]);
 
   img.addEventListener('click', () => {
-    displayedImage.setAttribute('src', `images/${images[i]}`);
+    let imgSource = img.getAttribute('src');
+    let imgAlt = img.getAttribute('alt');
+    displayedImage.setAttribute('src', imgSource);
+    displayedImage.setAttribute('alt', imgAlt);
   });
 
   thumbBar.appendChild(img);
