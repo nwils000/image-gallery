@@ -8,13 +8,19 @@ const images = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg'];
 
 const altText = {
   pic1: 'Human eyeball.',
-  pic1: 'Rock formation.',
-  pic1: 'Purple flowers',
-  pic1: 'Egyptian hyrogliphs',
-  pic1: 'Butterfly on leaf',
+  pic2: 'Rock formation.',
+  pic3: 'Purple flowers',
+  pic4: 'Egyptian hyrogliphs',
+  pic5: 'Butterfly on leaf',
 };
 
-/* Declaring the alternative text for each image file */
+for (let i = 0; i < images.length; i++) {
+  let img = document.createElement('img');
+  img.setAttribute('src', `images/${images[i]}`);
+  altIdentifier = `pic${i + 1}`;
+  img.setAttribute('alt', altText[altIdentifier]);
+  thumbBar.appendChild(img);
+}
 
 /* Looping through images */
 
@@ -25,8 +31,6 @@ thumbBar.appendChild(newImage);
 
 /* Wiring up the Darken/Lighten button */
 
-// Declare a const array listing the filenames of each image, such as 'pic1.jpg'.
-// Declare a const object listing the alternative text for each image.
 // Loop through the array of filenames, and for each one, insert an <img>
 // element inside the thumb-bar <div> that embeds that image in the page along with its alternative text.
 
